@@ -1,5 +1,8 @@
 # To-Do List App
 
+<img width="1280" height="1012" alt="image" src="https://github.com/user-attachments/assets/249d5659-8a8d-4687-b4de-1d2df3f2f99a" />
+
+
 Это кросс-платформенное приложение для управления списком задач (To-Do List), использующее **Wails** для создания десктопных приложений с **React** для фронтенда и **Go** для серверной логики.
 
 ## Функциональные возможности:
@@ -27,5 +30,3 @@
 ```bash
 git clone https://github.com/your-username/todo-list.git
 cd todo-list
-
-<img width="1280" height="1012" alt="image" src="https://github.com/user-attachments/assets/f76d2333-776a-4a96-942b-2db206b6a215" />
