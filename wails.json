@@ -1,0 +1,21 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "todo-desktop",
+  "outputfilename": "todo-desktop",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "Sakhieva Nadira",
+    "email": "sakhievanadira0@gmail.com"
+  },
+  "frontend": {
+    "dir": "frontend/dist",
+    "install": "npm install",
+    "build": "npm run build"
+  },
+  "platforms": [
+    "windows/amd64"
+  ]
+}

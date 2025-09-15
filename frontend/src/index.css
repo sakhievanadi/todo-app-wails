@@ -1,0 +1,495 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 100px;
+  color: rgba(175, 47, 47, 0.15);
+  text-align: center;
+}
+
+.todoapp {
+  background: #fff;
+  margin: 40px 0 40px 0;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1)
+              0 25px 50px 0 rgba(0,0,0,1);
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 600px;
+  position: relative;
+  margin: 40px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  background: #ffffff;
+  z-index: -1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  background: #ffffff;
+  z-index: -2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+
+form input[type="text"]::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #d9d9d9;
+  font-style: italic; 
+}
+
+form input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #ededed; 
+  font-size: 24px;
+  width: 100%;
+  padding: 16px 16px 16px 52px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input[type="text"] {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #303030;
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  font-size: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li input[type="checkbox"] {
+  margin-right: 15px;
+  width: 24px;
+  height: 24px;
+}
+
+li span {
+  flex: 1;
+}
+
+li.completed span {
+  color: #cacaca;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+footer span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+footer {
+  padding: 10px 15px;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer button {
+  color: #898989;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-left: 10px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+
+footer button:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+footer button.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #f7f7f7;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover .checkmark {
+  border: 1px solid #d9d9d9
+}
+
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 12px;
+  border: solid #94d9ad;
+  border-width: 0 2px 2px 0;
+  transform: rotate(30deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  border-color: #d9d9d9;
+}
+
+.custom-checkbox input:checked ~ .checkmark::after {
+  display: block;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper::before {
+  content: "❯"; /* стрелочка */
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 20px;
+  color: #e6e6e6;
+  pointer-events: none;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 16px 16px 16px 40px; /* место под стрелку */
+  font-size: 24px;
+  border: none;
+  outline: none;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.theme-toggle img:hover {
+  transform: scale(1.1);
+}
+
+body.dark {
+  background-color: #363333;
+}
+
+body.dark h1 {
+  color: rgba(223, 96, 96, 0.567);
+}
+
+body.dark .card {
+  background-color: #444; /* Серый цвет для карточек */
+  color: #fff; /* Белый текст на сером фоне */
+}
+
+body.dark .todoapp {
+  background-color: #555; /* Серый фон для todoapp */
+}
+
+/* Если нужно, чтобы другие элементы (например, кнопки) тоже меняли цвет */
+body.dark footer {
+  color: #ccc; /* Цвет текста в footer */
+}
+
+body.dark footer button {
+  color: #b5b5b5; /* Светло-серый цвет для кнопок в темной теме */
+}
+
+footer button:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+footer button.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+body.dark form input[type="text"]::placeholder {
+  color: #b0b0b0; /* Цвет плейсхолдера, чтобы он был видим на темном фоне */
+  border-bottom: 2px solid #555; /* Граница для инпута */
+}
+
+/* Текст задач в темной теме */
+body.dark li span {
+  color: #f0f0f0; /* Белый цвет для текста задач */
+}
+
+body.dark form input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #787878; /* Темная линия под инпутом */
+  font-size: 24px;
+  width: 100%;
+  padding: 16px 16px 16px 52px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body.dark .card::before,
+body.dark .card::after {
+  background: #444; /* Темный фон для выпирающих частей */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Более выраженная тень для темной темы */
+}
+
+.theme-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;  /* Фиксируем контейнер */
+  top: 20px;        /* Немного отступаем сверху */
+  left: 50%;        /* Центрируем по горизонтали */
+  transform: translateX(-50%); /* Коррекция для точного выравнивания */
+  z-index: 100;     /* Обеспечиваем, чтобы кнопка была поверх других элементов */
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggle img {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Завершенные задачи */
+body.dark li.completed span {
+  color: #888; /* Светло-серый цвет для завершенных задач */
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+/* Текст внутри поля ввода (когда ты что-то набираешь) для темной темы */
+body.dark input[type="text"] {
+  color: #f0f0f0; /* Белый текст */
+  border-bottom: 2px solid #555; /* Граница для инпута */
+}
+
+body.dark form {
+  border-bottom: 1px solid #555; /* Граница для инпута */
+}
+
+body.dark input[type="text"]:focus {
+  border-color: #777; /* Граница при фокусе */
+}
+/* Разделители между задачами */
+body.dark li {
+  border-bottom: 1px solid #444; /* Темная линия между задачами */
+}
+
+/* Для темной темы */
+body.dark .custom-checkbox .checkmark {
+  background-color: #444; /* Темный фон для чекбокса */
+  border: 1px solid #555;  /* Темная граница */
+}
+
+body.dark .input-wrapper::before {
+  color: #999; /* Светло-серый цвет для темной темы */
+}
+
+
+@media (max-width: 600px) {
+
+    .card {
+      margin: 20px 10px; /* убираем лишние отступы по бокам */
+      border-radius: 8px;
+    }
+
+    .todoapp {
+      margin: 20px 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1)
+                  0 25px 50px 0 rgba(0,0,0,1);
+    }
+
+    form input[type="text"],
+    input[type="text"] {
+      font-size: 18px;
+      padding: 12px 12px 12px 50px; /* удобнее на мобилке */
+    }
+
+    li {
+      font-size: 18px;
+      padding: 12px;
+    }
+
+    li input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      background: #ffffff;
+      z-index: -1;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .card::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        right: 0;
+        bottom: -16px;
+        background: #ffffff;
+        z-index: -2;
+        max-width: 510px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+
+    footer span {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    footer div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    footer button {
+      margin: 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+  li {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  form input[type="text"] {
+    font-size: 16px;
+    padding: 10px 10px 10px 45px;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    background: #ffffff;
+    z-index: -1;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    bottom: -16px;
+    background: #ffffff;
+    z-index: -2;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+}
