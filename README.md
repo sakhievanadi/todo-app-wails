@@ -27,3 +27,5 @@
 ```bash
 git clone https://github.com/your-username/todo-list.git
 cd todo-list
+
+<img width="1280" height="1012" alt="image" src="https://github.com/user-attachments/assets/f76d2333-776a-4a96-942b-2db206b6a215" />
