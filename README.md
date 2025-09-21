@@ -2,31 +2,30 @@
 
 <img width="1280" height="1012" alt="image" src="https://github.com/user-attachments/assets/249d5659-8a8d-4687-b4de-1d2df3f2f99a" />
 
+This is a cross-platform to-do list management app that uses Wails to build desktop apps with React for the frontend and Go for the backend.
 
-Это кросс-платформенное приложение для управления списком задач (To-Do List), использующее **Wails** для создания десктопных приложений с **React** для фронтенда и **Go** для серверной логики.
+## Features:
 
-## Функциональные возможности:
+- Adding tasks: Ability to add new tasks to the list.
+- Switching tasks: Marking tasks as completed (with undo option).
+- Removing completed tasks: Clearing all completed tasks from the list. - **Task Filtering:** Filter tasks by status (all, active, completed).
+- **Dark and Light Themes:** Support for switching themes with saving to `localStorage`.
+- **State Persistence:** Task state is saved to `localStorage` and loaded on page reload.
 
-- **Добавление задач:** Возможность добавлять новые задачи в список.
-- **Переключение задач:** Отметка задач как выполненных (с возможностью отмены).
-- **Удаление выполненных задач:** Очистка всех выполненных задач из списка.
-- **Фильтрация задач:** Фильтрация задач по статусу (все, активные, выполненные).
-- **Темная и светлая тема:** Поддержка смены тем с сохранением в `localStorage`.
-- **Сохранение состояния:** Состояние задач сохраняется в `localStorage` и загружается при перезагрузке страницы.
+## Technologies:
 
-## Технологии:
+- **Wails**: A cross-platform framework for building desktop applications using Go for the server-side and React for the front-end.
+- **Go**: The server-side part of the application that handles the logic.
+- **React**: A library for building user interfaces.
+- **TypeScript**: Strong typing for the front-end.
+- **CSS**: For styling the interface.
+- **React Context API**: For theme management (light/dark).
 
-- **Wails**: Кросс-платформенный фреймворк для создания настольных приложений с использованием Go для серверной части и React для фронтенда.
-- **Go**: Серверная часть приложения, которая обрабатывает логику.
-- **React**: Библиотека для построения пользовательских интерфейсов.
-- **TypeScript**: Строгая типизация для фронтенда.
-- **CSS**: Для стилизации интерфейса.
-- **React Context API**: Для управления темой (светлая/темная).
+## Installation and launch:
 
-## Установка и запуск:
-
-### 1. Клонируйте репозиторий:
+### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/todo-list.git
-cd todo-list
+cd todo-desktop
+wails dev
